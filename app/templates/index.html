@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Bếp Nhà – Công thức nấu ăn{% endblock %}
+{% block content %}
+<section class="hero"><h1>Món ngon bắt đầu từ căn bếp nhỏ 🌿</h1><p>Tìm cảm hứng nấu ăn mỗi ngày với các công thức đơn giản, dễ thực hiện.</p>
+<form method="get"><input aria-label="Tìm công thức" name="q" value="{{ q }}" placeholder="Tìm theo tên món hoặc danh mục…"><button class="btn">Tìm công thức</button></form></section>
+<h2>Khám phá công thức</h2>
+<div class="grid">{% for recipe in recipes %}<article class="card"><span class="tag">{{ recipe.category }}</span><h3>{{ recipe.title }}</h3><p>⏱ {{ recipe.prep_minutes }} phút</p><p>{{ recipe.ingredients[:115] }}{% if recipe.ingredients|length > 115 %}…{% endif %}</p><a class="btn" href="{{ url_for('detail', recipe_id=recipe.id) }}">Xem cách làm</a></article>{% else %}<p>Chưa có công thức phù hợp.</p>{% endfor %}</div>
+{% endblock %}

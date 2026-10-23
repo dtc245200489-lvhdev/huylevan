@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Thêm công thức – Bếp Nhà{% endblock %}
+{% block content %}<section class="card"><h1>Thêm công thức mới</h1><form method="post">
+<label for="title">Tên món ăn *</label><input id="title" name="title" required maxlength="160">
+<label for="category">Danh mục</label><select id="category" name="category"><option>Món chính</option><option>Món nước</option><option>Món khai vị</option><option>Món tráng miệng</option><option>Đồ uống</option></select>
+<label for="prep_minutes">Thời gian (phút)</label><input id="prep_minutes" name="prep_minutes" type="number" min="1" max="1440" value="30">
+<label for="ingredients">Nguyên liệu (mỗi dòng một nguyên liệu) *</label><textarea id="ingredients" name="ingredients" rows="5" required></textarea>
+<label for="instructions">Cách thực hiện *</label><textarea id="instructions" name="instructions" rows="6" required></textarea>
+<button class="btn" type="submit">Lưu công thức</button></form></section>{% endblock %}

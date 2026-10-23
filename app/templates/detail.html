@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}{{ recipe.title }} – Bếp Nhà{% endblock %}
+{% block content %}<article class="card"><span class="tag">{{ recipe.category }}</span><h1>{{ recipe.title }}</h1><p>⏱ Thời gian chuẩn bị: {{ recipe.prep_minutes }} phút</p><h2>Nguyên liệu</h2><p class="steps">{{ recipe.ingredients }}</p><h2>Cách thực hiện</h2><p class="steps">{{ recipe.instructions }}</p><a class="btn" href="/">← Quay lại danh sách</a></article>{% endblock %}
